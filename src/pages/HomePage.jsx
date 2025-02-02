@@ -110,9 +110,7 @@ const HomePage = () => {
         <section className="header-section">
           <img src="/logo.png" alt="CryptoHive Logo" className="logo" />
           <h1 className="site-title">CryptoHive</h1>
-          <p className="site-description">Your gateway to cryptocurrency insights and trends.</p>
-
-          {/* Use the modular SearchComponent here */}
+          <p className="site-description">Your gateway to the latest cryptocurrency news, trends, and updates from top sources.</p>
           <SearchComponent cryptos={cryptos} />
 
           {/* Bee Animation under the search bar */}
