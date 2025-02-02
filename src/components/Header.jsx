@@ -26,9 +26,8 @@ const Header = ({ isLoggedIn, user, darkMode, setDarkMode }) => {
       <div className="auth-buttons">
         {isLoggedIn ? (
           <div className="auth-logged-in">
-            <div className="user-name">{user?.displayName || user?.email}</div>
             <button className="auth-button profile" onClick={handleProfilePageClick}>
-              Profile
+            {user?.email.split('@')[0]}
             </button>
             <button className="auth-button logout" onClick={handleLogoutClick}>
               Logout

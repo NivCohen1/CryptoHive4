@@ -78,8 +78,7 @@ const ProfilePage = () => {
 
   return (
     <div className="profile-page">
-      <h2>Your Profile</h2>
-      {user ? (
+<h2>Welcome, {user?.email.split('@')[0]}! Here’s your profile.</h2>      {user ? (
         <div>
           <button className="menu-button" onClick={handleBackToHome}>
             Back to Home
