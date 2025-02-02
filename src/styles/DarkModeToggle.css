@@ -1,0 +1,41 @@
+.dark-mode-toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.checkbox-label:hover {
+  background: linear-gradient(to right, #444, #222); /* Darker hover effect */
+}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.fa-moon,
+.fa-sun {
+  font-size: 14px;
+  color: white;
+  position: absolute;
+  z-index: 2;
+}
+
+.fa-moon {
+  left: 8px; /* Adjust position */
+}
+
+.fa-sun {
+  right: 8px; /* Adjust position */
+}

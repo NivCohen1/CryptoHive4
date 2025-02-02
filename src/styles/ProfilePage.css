@@ -1,0 +1,167 @@
+/* ProfilePage.css */
+
+.profile-page {
+  max-width: 1200px; /* Increased max-width for larger screens */
+  width: 90%; /* Makes the width responsive with some padding */
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for dark mode */
+}
+
+body.dark .profile-page {
+  background-color: #1e1e1e; /* Dark background for profile page */
+  color: white; /* Text color for dark mode */
+}
+
+/* Header Styles */
+.profile-page h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+body.dark .profile-page h2 {
+  color: white; /* Adjust header color for dark mode */
+}
+/* Button Styles */
+.menu-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #464645; /* Matches login button background */
+  color: black; /* Matches login button text color */
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s, transform 0.2s ease; /* Matches login button transition */
+}
+
+.menu-button:hover {
+  background-color: #2d2c2c; /* Matches login button hover background */
+  transform: scale(1.02); /* Subtle zoom effect, matches login button */
+}
+
+.menu-button:active {
+  background-color: #ca9206; /* Matches login button active background */
+  transform: scale(0.98); /* Button presses inward, matches login button */
+}
+
+/* Dark Mode Adjustments */
+body.dark .menu-button {
+  background-color: #8f8d8d; /* Matches dark mode login button background */
+  color: black; /* Matches dark mode login button text color */
+}
+
+body.dark .menu-button:hover {
+  background-color: #ca9206; /* Matches dark mode login button hover background */
+}
+
+body.dark .menu-button:active {
+  background-color: #ca9206; /* Matches dark mode login button active background */
+}
+
+/* Paragraph Styles */
+.profile-page p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.profile-page h3 {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+body.dark .profile-page h3 {
+  color: white; /* Adjust h3 color for dark mode */
+}
+
+/* Favorites List Styles */
+.favorites-list {
+  display: grid; /* Use grid layout for multi-column */
+  grid-template-columns: repeat(3, 1fr); /* Fixed 3 columns */
+  gap: 15px; /* Space between items */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.favorites-list li {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Increased space between checkbox and label */
+}
+
+.favorites-list label {
+  font-size: 1.1rem;
+}
+
+.favorites-list input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%; /* Make the checkbox circular */
+  border: 2px solid #ff9d00; /* Add a border to enhance visibility */
+  background-color: rgb(2, 2, 2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.favorites-list input[type="checkbox"]:checked {
+  background-color: #ff9d00; /* Fill the circle when checked */
+  border-color: #ff9d00; /* Darker border when checked */
+}
+
+body.dark .favorites-list input[type="checkbox"] {
+  border-color: #888; /* Lighter border for dark mode */
+  background-color: #333; /* Dark background for dark mode */
+}
+
+body.dark .favorites-list input[type="checkbox"]:checked {
+  background-color: #ff9d00; /* Lighter blue fill in dark mode */
+  border-color: #ff9d00;
+}
+
+
+
+/* Save Status Styles */
+.save-status {
+  margin-top: 15px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #00691e;
+}
+
+.save-status.error {
+  color: #dc3545;
+}
+
+body.dark .save-status {
+  color: #38ae5a; /* Adjust save status color for dark mode */
+}
+
+body.dark .save-status.error {
+  color: #ff4d4f; /* Adjust error color for dark mode */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .profile-page {
+    max-width: 900px; /* Adjust for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-page {
+    max-width: 100%; /* Use full width for smaller screens */
+    padding: 10px; /* Adjust padding */
+  }
+
+  .favorites-list {
+    grid-template-columns: 1fr; /* Single column layout for smaller screens */
+  }
+}

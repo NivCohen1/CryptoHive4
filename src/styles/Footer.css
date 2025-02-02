@@ -1,0 +1,62 @@
+/* Footer Styling */
+.footer {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed; /* Fixed position at the bottom of the screen */
+  bottom: 0; /* Align it to the bottom */
+  left: 0; /* Align it to the left edge */
+  width: 100%; /* Ensure it spans across the entire screen */
+  box-sizing: border-box; /* Make sure padding doesn't affect width */
+  z-index: 100; /* Ensure footer appears above other content */
+  display: flex; /* Use flexbox to layout footer content */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  flex-direction: row; /* Align items in a row (default) */
+  gap: 10px; /* Space between footer items */
+}
+
+/* Add padding to the body to prevent the footer from covering content */
+body {
+  padding-bottom: 60px; /* Adjust this value based on your footer's height */
+  margin: 0; /* Ensure no extra margin is causing issues */
+}
+
+/* Adjust for links in the footer */
+.footer a {
+  color: #00acee;
+  text-decoration: none;
+  margin: 0 5px;
+  font-size: 1rem; /* Default font size */
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Make footer responsive for smaller devices */
+@media (max-width: 768px) {
+  .footer {
+      padding: 10px 20px; /* Adjust padding for smaller screens */
+      flex-direction: column; /* Stack items vertically */
+      gap: 15px; /* More space between items */
+      text-align: center; /* Center-align the text */
+  }
+
+  /* Reduce font size for small screens */
+  .footer a {
+      font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+      padding: 10px 10px; /* Reduce padding further on very small screens */
+  }
+
+  /* Further reduce font size for very small screens */
+  .footer a {
+      font-size: 0.8rem;
+  }
+}
