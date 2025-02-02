@@ -22,7 +22,7 @@ const App = () => {
           <Route path="/search" element={<SearchResultsPage />} />
         </Routes>
       </Layout>
-        <Footer /> {/* Footer placed here */}
+        <Footer /> 
       </div>
     </Router>
   );

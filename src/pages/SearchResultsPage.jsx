@@ -94,29 +94,9 @@ const SearchResultsPage = () => {
       {sidebarVisible && (
         <Sidebar
           predefinedCryptos={[
-            "Bitcoin",
-            "Ethereum",
-            "Binance Coin",
-            "Tether",
-            "USD Coin",
-            "Ripple",
-            "Cardano",
-            "Solana",
-            "Dogecoin",
-            "Polkadot",
-            "Uniswap",
-            "Litecoin",
-            "Chainlink",
-            "Bitcoin Cash",
-            "Avalanche",
-            "Polygon",
-            "Stellar",
-            "VeChain",
-            "TRON",
-            "Filecoin",
-            "Ethereum Classic",
-            "Algorand",
-            "Tezos",
+            "Bitcoin","Ethereum","Binance Coin","Tether","USD Coin","Ripple","Cardano",
+            "Solana","Dogecoin","Polkadot","Uniswap","Litecoin","Chainlink","Bitcoin Cash"
+            ,"Avalanche","Polygon","Stellar","VeChain","TRON","Filecoin","Ethereum Classic","Algorand","Tezos",
           ]}
         />
       )}
