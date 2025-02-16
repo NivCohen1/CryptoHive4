@@ -1,6 +1,20 @@
 import React from "react";
 import "../styles/DarkModeToggle.css";
 
+/**
+ * DarkModeToggle Component
+ * ------------------------
+ * This component provides a toggle switch for enabling and disabling dark mode.
+ * It takes two props:
+ * - `darkMode`: A boolean indicating whether dark mode is currently enabled.
+ * - `setDarkMode`: A function to update the dark mode state.
+ * 
+ * The toggle switch consists of:
+ * - A checkbox input that controls dark mode state.
+ * - A label that includes icons for the moon (dark mode) and sun (light mode).
+ * - A moving ball indicator for visual feedback.
+ */
+
 const DarkModeToggle = ({ darkMode, setDarkMode }) => {
   return (
     <div className="dark-mode-toggle">

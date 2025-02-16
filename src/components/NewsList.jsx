@@ -1,10 +1,24 @@
 import React from 'react';
-
+/**
+ * NewsList Component
+ * ------------------
+ * This component displays a list of cryptocurrency-related news articles.
+ * It handles three states:
+ * - `loading`: Shows a spinner while news articles are being fetched.
+ * - `error`: Displays an error message if fetching news fails.
+ * - `news`: Renders a list of articles if data is available.
+ * 
+ * Props:
+ * - `news`: An array of news article objects containing details like title, image, and publication date.
+ * - `loading`: Boolean indicating whether the news data is still being fetched.
+ * - `error`: String containing an error message if the data fetch fails.
+ */
 const NewsList = ({ news, loading, error }) => {
+    // Show a loading spinner if data is still being fetched
     if (loading) {
         return <div className="loading-spinner"><div className="spinner"></div></div>;
     }
-
+    // Show an error message if fetching news fails
     if (error) {
         return <div className="error-message">{error}</div>;
     }

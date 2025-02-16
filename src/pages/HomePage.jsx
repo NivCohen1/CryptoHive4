@@ -6,19 +6,33 @@ import SearchComponent from "../components/SearchComponent"; // Import Search Co
 import NewsList from "../components/NewsList"; // Import NewsList Component
 import RunningBanner from "../components/RunningBanner"; // Import Running Banner
 import "../styles/HomePage.css";
-
+/**
+ * HomePage Component
+ * ------------------
+ * This component serves as the main landing page for CryptoHive.
+ * 
+ * Features:
+ * - Displays a running banner with top cryptocurrencies.
+ * - Provides a search bar to look up cryptocurrencies.
+ * - Fetches and displays cryptocurrency news.
+ * - Retrieves user's favorite cryptocurrencies from Firestore.
+ * - Allows filtering news based on selected categories and favorites.
+ */
 const HomePage = () => {
-  const navigate = useNavigate();
-  const [user, setUser] = useState(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [cryptos, setCryptos] = useState([]);
-  const [news, setNews] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const navigate = useNavigate(); // Hook for navigation
+  const [user, setUser] = useState(null); // Stores authenticated user
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Tracks login status
+  const [cryptos, setCryptos] = useState([]); // Stores cryptocurrency list
+  const [news, setNews] = useState([]); // Stores fetched news articles
+  const [loading, setLoading] = useState(false); // Controls loading state
+  const [error, setError] = useState(null); // Stores error messages
   const [userFavorites, setUserFavorites] = useState([]); // Add user favorites state
   const [selectedCategory, setSelectedCategory] = useState("all"); // Add category state
 
-  // Monitor Firebase Auth state
+  /**
+   * Effect Hook: Monitors Firebase authentication state.
+   * - If a user is logged in, fetch their favorites from Firestore.
+   */
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((currentUser) => {
       if (currentUser) {
@@ -31,7 +45,7 @@ const HomePage = () => {
       }
     });
 
-    return () => unsubscribe();
+    return () => unsubscribe(); // Cleanup function to prevent memory leaks
   }, []);
 
   // Fetch user's favorite cryptocurrencies from Firestore
@@ -43,7 +57,10 @@ const HomePage = () => {
     }
   };
 
-  // Fetch cryptocurrency list
+  /**
+   * Effect Hook: Fetches the list of all available cryptocurrencies.
+   * - Calls CryptoCompare API and extracts cryptocurrency names.
+   */
   useEffect(() => {
     const fetchCryptos = async () => {
       try {
@@ -66,7 +83,11 @@ const HomePage = () => {
     fetchCryptos();
   }, []);
 
-  // Fetch News with category and userFavorites filtering
+  /**
+   * Effect Hook: Fetches cryptocurrency news based on the selected category and user favorites.
+   * - Calls CryptoCompare News API.
+   * - If the user has favorites, filters news to include articles related to their selected cryptos.
+   */
   useEffect(() => {
     const fetchNews = async () => {
       try {

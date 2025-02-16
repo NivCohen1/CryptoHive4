@@ -3,14 +3,26 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import "../styles/SearchResultsPage.css";
 
+/**
+ * SearchResultsPage Component
+ * ---------------------------
+ * This component displays news articles related to a searched cryptocurrency.
+ * 
+ * Features:
+ * - Extracts the searched cryptocurrency from the URL query.
+ * - Fetches and displays news related to the searched cryptocurrency.
+ * - Allows users to filter news by a selected date.
+ * - Includes a sidebar with predefined cryptocurrencies for quick navigation.
+ * - Provides error handling and a loading state.
+ */
 const SearchResultsPage = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const [crypto, setCrypto] = useState("");
-  const [news, setNews] = useState([]);
-  const [filteredNews, setFilteredNews] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const location = useLocation(); // Get the current URL location
+  const navigate = useNavigate(); // React Router navigation hook
+  const [crypto, setCrypto] = useState(""); // Stores the searched cryptocurrency
+  const [news, setNews] = useState([]); // Stores all fetched news articles
+  const [filteredNews, setFilteredNews] = useState([]); // Stores news filtered by the search term
+  const [loading, setLoading] = useState(true); // Tracks loading state
+  const [error, setError] = useState(null);  // Stores error messages
   const [sidebarVisible, setSidebarVisible] = useState(true); // State for sidebar visibility
   const [selectedDate, setSelectedDate] = useState(() => {
     const today = new Date();
@@ -19,7 +31,10 @@ const SearchResultsPage = () => {
   
   const API_KEY = "e084bcc89f0bf7339cebbc2c3c3ae2bd80cf3e0fbf3b1d89301c17f20e231c1c";
 
-  // Extract `crypto` query from URL
+  /**
+   * Effect Hook: Extracts the `crypto` query parameter from the URL.
+   * - If no cryptocurrency is found, the user is redirected to the home page.
+   */
   useEffect(() => {
     const query = new URLSearchParams(location.search);
     const selectedCrypto = query.get("crypto");
@@ -30,7 +45,12 @@ const SearchResultsPage = () => {
     }
   }, [location, navigate]);
 
-  // Fetch news whenever `crypto` or `selectedDate` changes
+  /**
+   * Effect Hook: Fetches cryptocurrency news whenever `crypto` or `selectedDate` changes.
+   * - Calls the CryptoCompare API to retrieve news for the selected cryptocurrency.
+   * - Converts the selected date into a UNIX timestamp.
+   * - Filters the news articles based on the searched cryptocurrency.
+   */
   useEffect(() => {
     if (!crypto || !selectedDate) return;
 

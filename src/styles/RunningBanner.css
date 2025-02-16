@@ -14,14 +14,14 @@
     animation: scroll 55s linear infinite; /* Adjusted speed */
   }
   
-  .crypto-item {
+  .banner-crypto-item {
     display: inline-block;
     margin: 0 20px;
     font-size: 1rem;
     color: #f8f9fa;
   }
   
-  .crypto-item strong {
+  .banner-crypto-item strong {
     color: #ffcc00; /* Highlighted crypto name */
   }
   
