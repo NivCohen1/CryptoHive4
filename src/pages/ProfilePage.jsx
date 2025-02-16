@@ -21,7 +21,6 @@ const ProfilePage = () => {
   const [user, setUser] = useState(null);
   const [favorites, setFavorites] = useState([]);
   const [saveStatus, setSaveStatus] = useState(""); // State to track save status
-  //const [cryptoLogos, setCryptoLogos] = useState({});
 
   const navigate = useNavigate();
 
@@ -117,24 +116,29 @@ const ProfilePage = () => {
           <h3>Choose Your Favorite Cryptos:</h3>
           <div className="crypto-grid">
             {availableCryptos.map((crypto) => (
-              <div key={crypto} className="crypto-item">
+              <label
+                key={crypto}
+                className="crypto-item"
+                onClick={(e) => {
+                  e.preventDefault(); // Prevents checkbox default behavior
+                  handleFavoriteChange({ target: { value: crypto } });
+                }}
+              >
                 <input
-                    type="checkbox"
-                    id={`checkbox-${crypto}`}
-                    value={crypto}
-                    checked={favorites.includes(crypto)}
-                    onChange={handleFavoriteChange}
-                  />
-                <label htmlFor={`checkbox-${crypto}`}>
-                  <img
-                    src={cryptoLogos[crypto] || "/bee.jpg"}
-                    alt={crypto}
-                    className="crypto-logo"
-                    onError={(e) => { e.target.src = "/bee.jpg"; }}
-                  />
-                  {crypto}
-                </label>
-              </div>
+                  type="checkbox"
+                  id={`checkbox-${crypto}`}
+                  value={crypto}
+                  checked={favorites.includes(crypto)}
+                  onChange={() => {}}
+                />
+                <img
+                  src={cryptoLogos[crypto] || "/bee.jpg"}
+                  alt={crypto}
+                  className="crypto-logo"
+                  onError={(e) => { e.target.src = "/bee.jpg"; }}
+                />
+                <span>{crypto}</span>
+              </label>
             ))}
           </div>
           <button onClick={handleSaveFavorites}>Save Favorites</button>
@@ -145,5 +149,7 @@ const ProfilePage = () => {
       )}
     </div>
   );
+  
+  
 };
 export default ProfilePage;

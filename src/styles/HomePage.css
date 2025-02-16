@@ -189,7 +189,10 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   transition: all 0.2s;
 }
-
+body.dark .news-card {
+  background-color: #1e1e1e; /* Darker background for dark mode */
+  border-color: #444; /* Adjust border for dark mode */
+}
 
 .news-card:hover {
   transform: translateY(-5px);
@@ -211,6 +214,9 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+body.dark .news-title{
+  color: #ffb92c;
 }
 
 .news-description {

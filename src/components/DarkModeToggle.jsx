@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/DarkModeToggle.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 /**
  * DarkModeToggle Component
@@ -26,8 +27,8 @@ const DarkModeToggle = ({ darkMode, setDarkMode }) => {
         onChange={() => setDarkMode(!darkMode)}
       />
       <label htmlFor="checkbox" className="checkbox-label">
-        <i className="fas fa-moon"></i>
-        <i className="fas fa-sun"></i>
+        <i className="fa-solid fa-moon"></i>
+        <i className="fa-solid fa-sun"></i>
         <span className="ball"></span>
       </label>
     </div>
