@@ -223,3 +223,19 @@ input[type="checkbox"] {
     grid-template-columns: 1fr; /* Single column layout for smaller screens */
   }
 }
+
+
+.crypto-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.crypto-item.selected {
+  outline: 3px solid #ff9d00;
+  border-radius: 8px;
+}
