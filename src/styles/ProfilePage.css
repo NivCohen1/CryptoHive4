@@ -128,7 +128,7 @@ body.dark .favorites-list input[type="checkbox"]:checked {
   margin-top: 15px;
   font-size: 1rem;
   font-weight: 500;
-  color: #00691e;
+  color: #fb5400;
 }
 
 .save-status.error {
@@ -136,7 +136,7 @@ body.dark .favorites-list input[type="checkbox"]:checked {
 }
 
 body.dark .save-status {
-  color: #38ae5a; /* Adjust save status color for dark mode */
+  color: #fb5400; /* Adjust save status color for dark mode */
 }
 
 body.dark .save-status.error {
